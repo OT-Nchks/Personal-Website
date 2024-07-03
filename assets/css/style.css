@@ -1,0 +1,491 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  @font-face {
+    font-family: "harmond";
+    src: url(/harmond-semiboldcondensed.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "Roslindale Deck Narrow Semi Bold";
+    src: url(/Roslindale_Deck_Narrow_SemiBold.woff2) format("woff2");
+  }
+@font-face {
+    font-family: "Roslindale Display Condensed Light";
+    src: url(/Roslindale_Display_Condensed_Light.woff2) format("woff2");
+  }
+@font-face {
+    font-family: 'neue_montrealregular';
+    src: url(/neuemontreal_regular.woff2) format("woff2");
+  }
+
+html, body{
+    width: 100%;
+    height: 100vh;
+    font-family: "neue_montrealregular";
+    color: #cdc6be;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: #cdc6be;
+}
+::selection{
+    background: bisque;
+    color: #141412;
+}
+
+.container{
+    width: 100%;
+    z-index: 0;
+    background: #141412;
+    margin-top: 80px; 
+    padding: 0;
+    min-height: 100vh;
+}
+.row {
+  position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * 0);
+    margin-right: calc(-0.5 * 1.5rem);
+    margin-left: calc(-0.5 * 1.5rem);
+  }
+  .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(1.5rem * 0.5);
+    padding-left: calc(1.5rem * 0.5);
+    margin-top: 0;
+  }
+  
+  .col {
+    flex: 1 0 0%;
+  }
+  .col-md1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .col-md2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .col-md3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .col-md4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .col-md5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .col-md6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+.mt2{
+    margin-top: 2rem;
+}
+.mt5{
+    margin-top: 5rem;
+}
+.my2{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+
+
+/*NAV*/
+header{
+    position: fixed;
+    z-index: 2;
+    border-bottom: 1px solid #cdc6be;
+  }
+  nav{
+      position: fixed;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5em 2em;
+      color: #d3ccc5;
+      background: #141412;
+      top: 0;
+  }
+  nav > div{
+      flex: 1;
+  }
+  .info{
+    font-family: "harmond";
+    display: flex;
+    gap: 0.4rem;
+    color: rgb(142, 190, 226);
+  }
+  .info1{
+    font-family: "harmond";
+    display: none;
+    gap: 0.4rem;
+  }
+  .logo{
+      text-align: center;
+      font-family: "Roslindale Deck Narrow Semi Bold";
+  }
+  logo p a{
+      text-decoration: none;
+      font-size: 30px;
+      color: #cdc6be;
+  }
+  .nav-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-menu li {
+    margin: 0 10px;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: #cdc6be;
+    font-family: "harmond";
+    font-size: 1.3rem;
+}
+.nav-menu a:hover {
+    text-decoration: line-through;
+    color: rgb(142, 190, 226);
+}
+.nav-menu a.active {
+  color: rgb(142, 190, 226);
+  background: #383838;
+  padding: 0.1em;
+  border-radius: 0.2rem;
+}
+  .toggle-btn{
+      display: none;
+  }
+  .burger{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.75em 2em 1.5em 2em;
+      background: rgba(255,255,255,0);
+      outline: none;
+      border: none;
+      width: 28px;
+      height: 20px;
+      transition: all 250ms ease-out;
+      cursor: pointer;
+  }
+  .burger::before, .burger::after{
+      content: "";
+      width: 40px;
+      height: 2px;
+      position: absolute;
+      background: #cdc6be;
+      transition: all 250ms ease-out;
+      will-change: transform;
+  }
+  .burger::before{
+      transform: translateY(-3px);
+  }
+  .burger::after{
+      transform: translateY(3px);
+  }
+  .active.burger::before{
+      transform: translateY(0) rotate(45deg);
+  }
+  .active.burger::after{
+      transform: translateY(0) rotate(-45deg);
+  }
+  
+ 
+
+
+
+/*MAIN*/
+  .line__container{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .separator{
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: rgba(87, 87, 87, 0.304);
+  }
+  
+  .separator:nth-child(1){
+    left: 6%
+  }
+  .separator:nth-child(2){
+    left: 28.5%
+  }
+  .separator:nth-child(3){
+    left: 50%
+  }
+  .separator:nth-child(4){
+    left: 71.5%
+  }
+  .separator:nth-child(5){
+    left: 93%
+  }
+  .separator:nth-child(6){
+    left: 100%
+  }
+ 
+
+  .links {
+    background-color: #4b4949;
+    margin: 3em 4em;
+    padding: 1em;
+    border-radius: 8px;
+}
+.link-border{
+  background-color: #948765;
+    margin: 0.5em;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: center;
+    width: 32%;
+    font-size: 18px;
+    font-weight: 600;
+}
+.link-border a{
+  color: #fff;
+}
+.about-goals-section {
+    margin: 2em 2em;
+}
+.about-border{
+    margin: 2em;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    font-size: 18px;
+}
+.goals-border{
+    margin: 2em;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    font-size: 18px;
+    list-style: none;
+}
+#goals{
+  color:rgb(125, 163, 192);
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-bottom: 0.5em;
+}
+.display-name{
+  font-size: 3rem;
+  font-family: "harmond";
+  letter-spacing: 0.03em;
+}
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+  /*FOOTER*/
+footer {
+    background-color: rgb(125, 163, 192);
+    color: #fff;
+    text-align: left;
+    padding: 3em;
+    margin-top: 1.5rem;
+    /* display: flex; */
+    position: relative;
+    top: auto;
+    bottom: 0%;
+    left: 0%;
+    right: 0%
+}
+.footer-heading{
+    margin-bottom: 2rem;
+    font-family: "harmond";
+    font-size: 3.5rem;
+}
+.contact-links{
+    font-family: 'neue_montrealregular';
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    border: 1px #fff solid;
+   
+    border-radius: 2rem;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0.4rem;
+    margin: 0.6rem;
+    outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+    transition:         0.08s ease-in;
+    -o-transition:      0.08s ease-in;
+    -ms-transition:     0.08s ease-in;
+    -moz-transition:    0.08s ease-in;
+    -webkit-transition: 0.08s ease-in;
+}
+.contact-links a{
+    color: #fff;
+}
+ 
+  .fill1:hover {
+    color: #ebe4dd;
+  }
+  .fill1:before {
+    content: "";
+    position: absolute;
+    background: #141412;
+    color:#fff;
+    padding: 0.85rem;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    transition: top 0.09s ease-in;
+    overflow: hidden;
+  }
+  .fill1:hover:before {
+    top: 0;
+  }
+
+.footer-text{
+    text-align: center;
+    font-family: 'neue_montrealregular';
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 568px) {
+  .about-goals{
+    width: 100%;
+  }
+  .profile-image{
+    order: -1;
+  }
+    .nav-menu{
+        display: none;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-menu li {
+        margin: 20px 15px;
+        text-align: right;
+        border-bottom: 1px solid #cdc6be;
+    }
+    .nav-menu.open {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(123, 164, 196, 0.718);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        z-index: 1;
+    }
+    .toggle-btn {
+        display: flex;
+        justify-content: flex-end;
+    } 
+
+    .separator:nth-child(1){
+      left: 0%
+    }
+    .separator:nth-child(2){
+      left: 6%
+    }
+    .separator:nth-child(3){
+      left: 50%
+    }
+    .separator:nth-child(4){
+      left: 94%
+    }
+    .separator:nth-child(5){
+      left: 100%
+    }
+    .separator:nth-child(6){
+      left: 0%
+    }
+
+    .info1{
+        display: flex;
+        flex-direction: column;
+    }
+    .info{
+        display: none;
+    }
+    .links {
+      margin: 3em 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+   .link-border{
+      width: 95%;
+  }
+}
+
+@media (max-width: 900px) {
+ .about-border{
+     margin: 0.5em;
+     padding: 1em;
+     text-align: left;
+ }
+ .goals-border{
+   margin: 0.5em;
+   padding: 1em;
+   text-align: left;
+}
+}
+
+
+@media (min-width: 769px) and (max-width: 906px){
+  .link-border{
+     width: 30%;
+ }
+}
+@media (min-width: 907px) and (max-width: 1484px){
+  .link-border{
+     width: 31%;
+ }
+}
