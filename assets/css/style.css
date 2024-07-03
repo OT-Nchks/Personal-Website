@@ -4,17 +4,13 @@
     box-sizing: border-box;
 }
 
-  @font-face {
+@font-face {
     font-family: "harmond";
     src: url(/harmond-semiboldcondensed.woff2) format("woff2");
   }
-  @font-face {
+@font-face {
     font-family: "Roslindale Deck Narrow Semi Bold";
     src: url(/Roslindale_Deck_Narrow_SemiBold.woff2) format("woff2");
-  }
-@font-face {
-    font-family: "Roslindale Display Condensed Light";
-    src: url(/Roslindale_Display_Condensed_Light.woff2) format("woff2");
   }
 @font-face {
     font-family: 'neue_montrealregular';
